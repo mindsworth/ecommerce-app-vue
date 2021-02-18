@@ -83,6 +83,16 @@ export default {
         cursor: pointer;
         width: fit-content;
       }
+
+      a:hover {
+        font-style: italic;
+      }
+
+      a.router-link-exact-active {
+        font-weight: 300;
+        font-style: italic;
+        color: $color-primary;
+      }
     }
   }
 }
