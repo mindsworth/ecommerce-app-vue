@@ -15,14 +15,17 @@
       </a>
       <router-link to="/login">Login</router-link>
       <Cart />
-      <HamburgerMenu />
-      <OverlayMenu />
+      <HamburgerMenu
+        :class="{ 'is-active': menuIsActive }"
+        @click="animateMenu"
+      />
+      <OverlayMenu v-if="menuIsActive" />
     </div>
   </nav>
 </template>
 
 <script>
-import { logo } from "../assets/index";
+import { ref } from "vue";
 import Cart from "./Cart";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
@@ -33,9 +36,13 @@ export default {
   components: { Cart, HamburgerMenu, OverlayMenu, Logo },
 
   setup() {
-    const logoUrl = logo;
+    const menuIsActive = ref(false);
 
-    return { logoUrl };
+    const animateMenu = () => {
+      menuIsActive.value = !menuIsActive.value;
+    };
+
+    return { menuIsActive, animateMenu };
   }
 };
 </script>

@@ -35,7 +35,6 @@ export default {
   background-color: $color-white;
   display: grid;
   grid-template-columns: 1.35fr 2fr;
-  display: none;
 
   &__left {
     border: 1px solid #000;

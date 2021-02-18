@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="hamburger"
-    :class="{ 'is-active': menuIsActive }"
-    @click="animateMenu"
-  >
+  <div class="hamburger">
     <span className="line"></span>
     <span className="line"></span>
     <span className="line"></span>
@@ -11,18 +7,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
-export default {
-  setup() {
-    const menuIsActive = ref(false);
-
-    const animateMenu = () => {
-      menuIsActive.value = !menuIsActive.value;
-    };
-
-    return { menuIsActive, animateMenu };
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">
