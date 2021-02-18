@@ -22,27 +22,22 @@ export default {
 }
 
 html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
   font-size: 62.5%;
 }
 
-body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  font-size: 1vw;
+html.touch *:hover {
+  all: unset !important;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+body {
+  font-family: "Libre Franklin", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-black;
+  font-size: 1vw;
+  font-weight: 300;
 }
 </style>

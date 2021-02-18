@@ -26,14 +26,14 @@ export default {
   setup() {
     const logoUrl = logo;
 
-    console.log("logoUrl", logoUrl);
-
     return { logoUrl };
   }
 };
 </script>
 
 <style lang="scss">
+@import "../../assets/styles/_variables.scss";
+
 .nav-header {
   position: sticky;
   top: 0;
@@ -51,10 +51,14 @@ export default {
 
   &__links {
     a {
-      color: #2c3e50;
+    color: $color-black;
+    cursor: pointer;
+    margin-right: 2vw;
+    text-decoration: none;
 
       &.router-link-exact-active {
-        color: #42b983;
+        font-weight: 500;
+        color: $color-primary;
       }
     }
   }
