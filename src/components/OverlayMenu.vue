@@ -1,6 +1,8 @@
 <template>
   <div class="overlay-menu">
-    <div class="overlay-menu__left"></div>
+    <div class="overlay-menu__left">
+      <img :src="menuHeroImage" alt="Menu Hero Image" class="menu-hero-image" />
+    </div>
     <div class="overlay-menu__right">
       <div class="right__header">
         <Logo size="12" />
@@ -17,16 +19,18 @@
 <script>
 import Links from "./Links.vue";
 import Logo from "./Logo";
+import { menuImages } from "../assets/index";
 
 export default {
   name: "Overlay-Menu",
   components: { Logo, Links },
   setup() {
+    const menuHeroImage = menuImages["first"];
     const handleLinkHover = selected => {
       console.log("selected", selected);
     };
 
-    return { handleLinkHover };
+    return { handleLinkHover, menuHeroImage };
   }
 };
 </script>
@@ -47,6 +51,11 @@ export default {
   grid-template-columns: 1.35fr 2fr;
 
   &__left {
+    .menu-hero-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 
   &__right {

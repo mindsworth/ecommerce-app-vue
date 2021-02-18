@@ -12,7 +12,3 @@
     >Login</router-link
   >
 </template>
-
-<script>
-export default {};
-</script>
