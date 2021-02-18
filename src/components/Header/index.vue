@@ -14,15 +14,20 @@
         About
       </a>
       <router-link to="/login">Login</router-link>
+      <Cart />
     </div>
+
   </nav>
 </template>
 
 <script>
 import { logo } from "../../assets/index";
+import Cart from "../Cart";
 
 export default {
   name: "Header",
+  components: {Cart},
+
   setup() {
     const logoUrl = logo;
 
@@ -50,6 +55,9 @@ export default {
   }
 
   &__links {
+    display: flex;
+    align-items: center;
+
     a {
     color: $color-black;
     cursor: pointer;

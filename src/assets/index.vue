@@ -51,5 +51,6 @@ export const menuImages = {
 
 export const VideoIsh = require("./img/video-ish.jpg");
 export const PlaySVG = require("./svg/play-button.svg");
+export const ShoppingIcon = require("./svg/shopping-cart.svg");
 export default {}
 </script>
