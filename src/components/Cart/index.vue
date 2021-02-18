@@ -1,6 +1,6 @@
 <template>
   <div className="cart">
-    <img :src="cartUrl" alt="Cart Icon" class="cart-icon" />
+    <img :src="cartUrl" alt="Cart Icon" class="cart__icon" />
     <div className="cart__count">
       <span className="item-count">120</span>
     </div>
@@ -27,6 +27,10 @@ export default {
 
 .cart {
   position: relative;
+
+  &__icon {
+    width: 1.6vw;
+  }
 
   &__count {
     width: 1.5vw;
