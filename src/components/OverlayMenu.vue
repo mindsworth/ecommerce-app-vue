@@ -20,14 +20,16 @@
 import Links from "./Links.vue";
 import Logo from "./Logo";
 import { menuImages } from "../assets/index";
+import { ref } from "vue";
 
 export default {
   name: "Overlay-Menu",
   components: { Logo, Links },
   setup() {
-    const menuHeroImage = menuImages["first"];
+    const menuHeroImage = ref(menuImages["first"]);
+
     const handleLinkHover = selected => {
-      console.log("selected", selected);
+      menuHeroImage.value = menuImages[selected];
     };
 
     return { handleLinkHover, menuHeroImage };
@@ -46,21 +48,21 @@ export default {
   left: 0;
   right: 0;
   left: 0;
-  background-color: $color-white;
   display: grid;
   grid-template-columns: 1.35fr 2fr;
 
   &__left {
     .menu-hero-image {
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 100vh;
+      object-fit: cover;
     }
   }
 
   &__right {
     display: flex;
     flex-direction: column;
+    background-color: $color-white;
   }
 
   & .right__header {
