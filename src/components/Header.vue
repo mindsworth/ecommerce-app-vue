@@ -16,6 +16,7 @@
       <router-link to="/login">Login</router-link>
       <Cart />
       <HamburgerMenu />
+      <OverlayMenu />
     </div>
   </nav>
 </template>
@@ -24,10 +25,11 @@
 import { logo } from "../assets/index";
 import Cart from "./Cart";
 import HamburgerMenu from "./HamburgerMenu";
+import OverlayMenu from "./OverlayMenu";
 
 export default {
   name: "Header",
-  components: { Cart, HamburgerMenu },
+  components: { Cart, HamburgerMenu, OverlayMenu },
 
   setup() {
     const logoUrl = logo;

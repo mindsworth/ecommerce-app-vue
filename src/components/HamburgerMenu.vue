@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss">
 .hamburger {
-  z-index: 9;
+  z-index: 100;
   &:hover {
     cursor: pointer;
   }
