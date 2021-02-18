@@ -1,11 +1,9 @@
 <template>
   <div class="overlay-menu">
-    <div class="overlay-menu__left">
-      <Logo />
-    </div>
+    <div class="overlay-menu__left"></div>
     <div class="overlay-menu__right">
       <div class="right__header">
-        <img :src="logoUrl" alt="Logo" class="nav-header__logo" />
+        <Logo />
       </div>
       Right Menu
     </div>
@@ -37,7 +35,18 @@ export default {
   grid-template-columns: 1.35fr 2fr;
 
   &__left {
+  }
+
+  &__right {
+  }
+
+  & .right__header {
     border: 1px solid #000;
+    height: 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10vw;
   }
 }
 </style>
