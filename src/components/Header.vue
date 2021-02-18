@@ -4,16 +4,7 @@
       <Logo class="nav-header__logo" />
     </router-link>
     <div class="nav-header__links">
-      <router-link to="/">
-        Home
-      </router-link>
-      <router-link to="/collection">
-        Collection
-      </router-link>
-      <a>
-        About
-      </a>
-      <router-link to="/login">Login</router-link>
+      <Links />
       <Cart />
       <HamburgerMenu
         :class="{ 'is-active': menuIsActive }"
@@ -30,10 +21,11 @@ import Cart from "./Cart";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
 import OverlayMenu from "./OverlayMenu";
+import Links from "./Links";
 
 export default {
   name: "Header",
-  components: { Cart, HamburgerMenu, OverlayMenu, Logo },
+  components: { Cart, HamburgerMenu, OverlayMenu, Logo, Links },
 
   setup() {
     const menuIsActive = ref(false);
