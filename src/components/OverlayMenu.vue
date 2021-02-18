@@ -1,21 +1,30 @@
 <template>
   <div class="overlay-menu">
     <div class="overlay-menu__left">
-      <img src="" alt="" />
+      <Logo />
     </div>
     <div class="overlay-menu__right">
+      <div class="right__header">
+        <img :src="logoUrl" alt="Logo" class="nav-header__logo" />
+      </div>
       Right Menu
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import Logo from "./Logo";
+
+export default {
+  name: "Overlay-Menu",
+  components: { Logo }
+};
 </script>
 
 <style lang="scss">
+@import "../assets/styles/_variables.scss";
+
 .overlay-menu {
-  border: 1px solid #000;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -23,6 +32,13 @@ export default {};
   left: 0;
   right: 0;
   left: 0;
-  background-color: #fff;
+  background-color: $color-white;
+  display: grid;
+  grid-template-columns: 1.35fr 2fr;
+  display: none;
+
+  &__left {
+    border: 1px solid #000;
+  }
 }
 </style>

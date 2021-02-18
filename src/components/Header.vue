@@ -1,7 +1,7 @@
 <template>
   <nav class="nav-header">
     <router-link to="/">
-      <img :src="logoUrl" alt="Logo" class="nav-header__logo" />
+      <Logo class="nav-header__logo" />
     </router-link>
     <div class="nav-header__links">
       <router-link to="/">
@@ -25,11 +25,12 @@
 import { logo } from "../assets/index";
 import Cart from "./Cart";
 import HamburgerMenu from "./HamburgerMenu";
+import Logo from "./Logo";
 import OverlayMenu from "./OverlayMenu";
 
 export default {
   name: "Header",
-  components: { Cart, HamburgerMenu, OverlayMenu },
+  components: { Cart, HamburgerMenu, OverlayMenu, Logo },
 
   setup() {
     const logoUrl = logo;
@@ -53,9 +54,9 @@ export default {
   -webkit-backdrop-filter: blur(18px);
   padding: 0 6%;
 
-  &__logo {
+  /* &__logo {
     width: 10vw;
-  }
+  } */
 
   &__links {
     display: flex;
