@@ -3,19 +3,31 @@
     <div class="overlay-menu__left"></div>
     <div class="overlay-menu__right">
       <div class="right__header">
-        <Logo />
+        <Logo size="12" />
       </div>
-      Right Menu
+      <div class="right__nav">
+        <div class="right__nav__links">
+          <Links @onHover="handleLinkHover" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Links from "./Links.vue";
 import Logo from "./Logo";
 
 export default {
   name: "Overlay-Menu",
-  components: { Logo }
+  components: { Logo, Links },
+  setup() {
+    const handleLinkHover = selected => {
+      console.log("selected", selected);
+    };
+
+    return { handleLinkHover };
+  }
 };
 </script>
 
@@ -38,15 +50,40 @@ export default {
   }
 
   &__right {
+    display: flex;
+    flex-direction: column;
   }
 
   & .right__header {
-    border: 1px solid #000;
-    height: 6vw;
+    height: 10vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 10vw;
+  }
+
+  & .right__nav {
+    height: 100%;
+    padding-left: 10vw;
+    margin-top: -10vh;
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100%;
+
+      a {
+        color: $color-black;
+        font-family: "Cormorant", serif;
+        font-size: 4vw;
+
+        font-weight: 200;
+        cursor: pointer;
+        width: fit-content;
+      }
+    }
   }
 }
 </style>

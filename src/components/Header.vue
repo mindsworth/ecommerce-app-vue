@@ -53,10 +53,6 @@ export default {
   -webkit-backdrop-filter: blur(18px);
   padding: 0 6%;
 
-  /* &__logo {
-    width: 10vw;
-  } */
-
   &__links {
     display: flex;
     align-items: center;

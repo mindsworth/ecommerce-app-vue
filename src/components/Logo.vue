@@ -11,7 +11,7 @@ export default {
   setup(props) {
     const logoUrl = logo;
     const logoWidth = {
-      width: props.size || "10vw"
+      width: props.size ? `${props.size}vw` : "10vw"
     };
 
     return { logoUrl, logoWidth };

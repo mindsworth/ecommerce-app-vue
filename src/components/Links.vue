@@ -1,12 +1,18 @@
 <template>
-  <router-link to="/">
+  <router-link to="/" @mouseover="$emit('onHover', '1')">
     Home
   </router-link>
-  <router-link to="/collection">
+  <router-link to="/collection" @mouseover="$emit('onHover', '2')">
     Collection
   </router-link>
-  <a>
+  <a @mouseover="$emit('onHover', '3')">
     About
   </a>
-  <router-link to="/login">Login</router-link>
+  <router-link to="/login" @mouseover="$emit('onHover', '4')"
+    >Login</router-link
+  >
 </template>
+
+<script>
+export default {};
+</script>
