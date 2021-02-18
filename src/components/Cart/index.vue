@@ -29,7 +29,7 @@ export default {
   position: relative;
 
   &__icon {
-    width: 1.6vw;
+    width: 1.8vw;
   }
 
   &__count {
