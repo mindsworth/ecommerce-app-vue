@@ -2,13 +2,13 @@
   <div className="cart">
     <img :src="cartUrl" alt="Cart Icon" class="cart__icon" />
     <div className="cart__count">
-      <span className="item-count">120</span>
+      <span className="item-count">12</span>
     </div>
   </div>
 </template>
 
 <script>
-import { ShoppingIcon } from "../../assets/index";
+import { ShoppingIcon } from "../assets/index";
 
 export default {
   name: "Cart",
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/styles/_variables.scss";
+@import "../assets/styles/_variables.scss";
 
 .cart {
   position: relative;

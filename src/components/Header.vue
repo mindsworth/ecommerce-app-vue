@@ -16,17 +16,16 @@
       <router-link to="/login">Login</router-link>
       <Cart />
     </div>
-
   </nav>
 </template>
 
 <script>
-import { logo } from "../../assets/index";
-import Cart from "../Cart";
+import { logo } from "../assets/index";
+import Cart from "./Cart";
 
 export default {
   name: "Header",
-  components: {Cart},
+  components: { Cart },
 
   setup() {
     const logoUrl = logo;
@@ -37,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/styles/_variables.scss";
+@import "../assets/styles/_variables.scss";
 
 .nav-header {
   position: sticky;
@@ -59,10 +58,10 @@ export default {
     align-items: center;
 
     a {
-    color: $color-black;
-    cursor: pointer;
-    margin-right: 2vw;
-    text-decoration: none;
+      color: $color-black;
+      cursor: pointer;
+      margin-right: 2vw;
+      text-decoration: none;
 
       &.router-link-exact-active {
         font-weight: 500;
