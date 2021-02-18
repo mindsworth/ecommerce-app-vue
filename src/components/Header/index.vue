@@ -10,16 +10,16 @@
       <router-link to="/collection">
         Collection
       </router-link>
-      <a v-scroll-to="'#section-one'">
+      <a>
         About
       </a>
-      <router-link to="/">Login</router-link>
+      <router-link to="/login">Login</router-link>
     </div>
   </nav>
 </template>
 
 <script>
-import { logo } from "../../assets";
+import { logo } from "../../assets/index";
 
 export default {
   name: "Header",
