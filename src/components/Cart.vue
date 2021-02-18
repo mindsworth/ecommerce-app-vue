@@ -27,6 +27,7 @@ export default {
 
 .cart {
   position: relative;
+  margin-right: 2vw;
 
   &__icon {
     width: 1.8vw;
