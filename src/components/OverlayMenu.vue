@@ -6,14 +6,15 @@
         :key="menuHeroImage"
         alt="Menu Hero Image"
         class="menu-hero-image"
+        ref="overlayLeftImage"
       />
     </div>
 
     <div class="overlay-menu__right" ref="overlayRight">
-      <div class="right__header">
+      <div class="right__header" ref="overlayRightHead">
         <Logo size="12" />
       </div>
-      <div class="right__nav">
+      <div class="right__nav" ref="overlayRightLinks">
         <div class="right__nav__links">
           <Links @onHover="handleLinkHover" />
         </div>
@@ -28,7 +29,7 @@ import Logo from "./Logo";
 import { menuImages } from "../assets/index";
 import { onMounted, ref, watchEffect } from "vue";
 // import { useRoute } from "vue-router";
-import gsap from "gsap";
+import { gsap } from "gsap";
 
 export default {
   name: "Overlay-Menu",
@@ -47,11 +48,25 @@ export default {
     const overlay = ref(null);
     const overlayLeft = ref(null);
     const overlayRight = ref(null);
+    const overlayRightHead = ref(null);
+    const overlayRightLinks = ref(null);
+    const overlayLeftImage = ref(null);
     const menuHeroImage = ref(menuImages["first"]);
     const tl = new gsap.timeline({ reversed: true });
 
     const handleLinkHover = selected => {
-      menuHeroImage.value = menuImages[selected];
+      //   menuHeroImage.value = menuImages[selected];
+
+      gsap.fromTo(
+        overlayLeftImage.value,
+        { attr: { src: menuImages[selected] }, autoAlpha: 0, duration: 1 },
+        {
+          attr: { src: menuImages[selected] },
+          autoAlpha: 1,
+          duration: 5,
+          ease: "power4.out"
+        }
+      );
     };
 
     onMounted(() => {
@@ -59,6 +74,10 @@ export default {
         autoAlpha: 1,
         duration: 0.1
       })
+        .to(overlayLeftImage.value, {
+          autoAlpha: 1,
+          duration: 0
+        })
         .to(overlayLeft.value, {
           height: "100vh",
           ease: "power4.in"
@@ -66,6 +85,14 @@ export default {
         .to(overlayRight.value, {
           height: "100%",
           ease: "power4.out"
+        })
+        .to(overlayRightHead.value, {
+          autoAlpha: 1,
+          duration: 0.2
+        })
+        .to(overlayRightLinks.value, {
+          autoAlpha: 1,
+          duration: 0.2
         });
     });
 
@@ -82,7 +109,10 @@ export default {
       menuHeroImage,
       overlayLeft,
       overlay,
-      overlayRight
+      overlayRight,
+      overlayRightHead,
+      overlayRightLinks,
+      overlayLeftImage
     };
   }
 };
@@ -103,11 +133,13 @@ export default {
 
   &__left {
     height: 0;
+    background-color: $color-white;
 
     .menu-hero-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      visibility: hidden;
     }
   }
 
@@ -124,13 +156,15 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding-left: 10vw;
+    visibility: hidden;
   }
 
   & .right__nav {
     flex: 1 1;
     height: 100%;
     padding-left: 10vw;
-    margin-top: -8vh;
+    margin-top: -15vh;
+    visibility: hidden;
 
     &__links {
       display: flex;
@@ -143,10 +177,10 @@ export default {
         color: $color-black;
         font-family: "Cormorant", serif;
         font-size: 4vw;
-
         font-weight: 200;
         cursor: pointer;
         width: fit-content;
+        margin: 0;
       }
 
       a:hover {
@@ -159,16 +193,6 @@ export default {
         color: $color-primary;
       }
     }
-  }
-
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 1s ease;
-  }
-
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
   }
 }
 </style>
