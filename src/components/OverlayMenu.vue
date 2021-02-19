@@ -189,8 +189,7 @@ export default {
 
       a.router-link-exact-active {
         font-weight: 300;
-        font-style: italic;
-        color: $color-primary;
+        color: unset;
       }
     }
   }
