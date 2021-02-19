@@ -39,5 +39,6 @@ body {
   color: $color-black;
   font-size: 1vw;
   font-weight: 300;
+  background-color: $color-bg;
 }
 </style>

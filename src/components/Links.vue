@@ -12,3 +12,8 @@
     >Login</router-link
   >
 </template>
+<script>
+export default {
+  emits: ["onHover"]
+};
+</script>

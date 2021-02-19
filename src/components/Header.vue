@@ -10,7 +10,7 @@
         :class="{ 'is-active': menuIsActive }"
         @click="animateMenu"
       />
-      <OverlayMenu v-if="menuIsActive" />
+      <OverlayMenu :active="menuIsActive" />
     </div>
   </nav>
 </template>
