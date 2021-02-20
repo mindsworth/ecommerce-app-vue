@@ -20,7 +20,6 @@
           }"
         />
       </SwiperSlide>
-      <!-- <SwiperSlide v-for="slide in 10" :key="slide">{{ slide }}</SwiperSlide> -->
     </Swiper>
   </div>
 </template>
@@ -53,8 +52,6 @@ export default {
 }
 
 .swiper-slide {
-  border: 1px solid #000;
-
   .slide__img {
     height: 100%;
     background-size: cover;
