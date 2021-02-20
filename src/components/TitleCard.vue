@@ -21,10 +21,6 @@ export default {
   max-width: 55%;
 
   .title {
-    font-weight: 400;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
     color: $color-secondary;
   }
 
