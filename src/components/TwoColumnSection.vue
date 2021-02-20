@@ -1,9 +1,9 @@
 <template>
-  <section class="about__section">
-    <div class="container about">
-      <div class="about--content"><TitleCard :data="data" /></div>
+  <section class="two-col-section">
+    <div class="container inner" :class="{ ethos: label === 'ethos' }">
+      <div class="inner--content"><TitleCard :data="data" /></div>
 
-      <div class="about--images">
+      <div class="inner--images">
         <img :src="data.bannerImage" alt="Banner Image" class="banner" />
 
         <div class="banner-overlay">
@@ -24,7 +24,7 @@ import TitleCard from "./TitleCard";
 export default {
   name: "Two-Column-Section",
   components: { TitleCard },
-  props: ["data"],
+  props: ["data", "label"],
   setup() {
     return {};
   }
@@ -34,16 +34,13 @@ export default {
 <style lang="scss">
 @import "../assets/styles/_variables.scss";
 
-.about__section {
-  & .about {
+.two-col-section {
+  & .inner {
     min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-
-    /* &--content {
-    } */
 
     &--images {
       margin-left: auto;
@@ -60,6 +57,26 @@ export default {
           bottom: 30%;
           width: 16vw;
           height: 24vw;
+        }
+      }
+    }
+
+    &.ethos {
+      .inner--content {
+        order: 2;
+
+        .title-card {
+          margin-left: auto;
+        }
+      }
+
+      .inner--images {
+        width: 100%;
+
+        & .banner-overlay__img {
+          left: unset;
+          right: 0;
+          bottom: 30%;
         }
       }
     }

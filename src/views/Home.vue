@@ -2,7 +2,7 @@
   <div class="home">
     <Hero />
     <div class="space" />
-    <TwoColumnSection :label="about" :data="aboutSectionData" />
+    <TwoColumnSection :label="'about'" :data="aboutSectionData" />
   </div>
 </template>
 
