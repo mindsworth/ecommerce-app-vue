@@ -34,6 +34,8 @@ export default {
 @import "../assets/styles/_variables.scss";
 
 .about__section {
+  border: 1px solid #000;
+
   & .about {
     min-height: 100vh;
     display: grid;
