@@ -18,7 +18,7 @@ export default {
 @import "../assets/styles/_variables.scss";
 
 .title-card {
-  max-width: 50%;
+  max-width: 55%;
 
   .title {
     font-weight: 400;

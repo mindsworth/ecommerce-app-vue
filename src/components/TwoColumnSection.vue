@@ -43,9 +43,10 @@ export default {
     align-items: center;
 
     &--images {
-      margin-left: auto;
       position: relative;
       z-index: -1;
+      width: 100%;
+      text-align: right;
 
       .banner {
         height: 40vw;
@@ -53,7 +54,7 @@ export default {
 
         &-overlay__img {
           position: absolute;
-          left: -25%;
+          left: 0;
           bottom: 30%;
           width: 16vw;
           height: 24vw;
@@ -72,6 +73,7 @@ export default {
 
       .inner--images {
         width: 100%;
+        text-align: left;
 
         & .banner-overlay__img {
           left: unset;
