@@ -5,6 +5,17 @@ export const third = require("./img/carousel-3.jpg");
 export const fourth = require("./img/carousel-4.jpg");
 export const fifth = require("./img/carousel-5.png");
 
+
+export const carouselImages = [
+  require("./img/carousel-1.jpg"),
+  require("./img/carousel-2.jpg"),
+  require("./img/carousel-3.jpg"),
+  require("./img/carousel-4.jpg"),
+  require("./img/carousel-5.png")
+];
+
+
+
 export const imgAbout1 = require("./img/about-1.jpg");
 export const imgAbout2 = require("./img/about-2.jpg");
 export const imgEthos1 = require("./img/ethos-1.jpg");

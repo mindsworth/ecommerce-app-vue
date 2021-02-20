@@ -10,6 +10,8 @@
       </router-link>
     </div>
 
+    <HeroCarousel />
+
     <!-- <div className="hero__slider">
       <SlickSlider />
     </div> -->
@@ -17,7 +19,10 @@
 </template>
 
 <script>
-export default {};
+import HeroCarousel from "./HeroCarousel.vue";
+export default {
+  components: { HeroCarousel }
+};
 </script>
 
 <style lang="scss">
