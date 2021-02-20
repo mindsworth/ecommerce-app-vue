@@ -3,6 +3,7 @@
     <Hero />
     <div class="space" />
     <TwoColumnSection :label="'about'" :data="aboutSectionData" />
+    <VideoSection />
     <TwoColumnSection :label="'ethos'" :data="ethosSectionData" />
   </div>
 </template>
@@ -11,10 +12,11 @@
 import TwoColumnSection from "../components/TwoColumnSection";
 import Hero from "../components/Hero";
 import { imgAbout1, imgAbout2, imgEthos1, imgEthos2 } from "../assets/index";
+import VideoSection from "../components/VideoSection";
 
 export default {
   name: "Home",
-  components: { Hero, TwoColumnSection },
+  components: { Hero, TwoColumnSection, VideoSection },
   setup() {
     const aboutSectionData = {
       title: "Who We Are",

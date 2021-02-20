@@ -60,8 +60,8 @@ export const menuImages = {
   fourth: require("./img/menu-4.jpg")
 };
 
-export const VideoIsh = require("./img/video-ish.jpg");
-export const PlaySVG = require("./svg/play-button.svg");
+export const videoIsh = require("./img/video-ish.jpg");
+export const playSVG = require("./svg/play-button.svg");
 export const ShoppingIcon = require("./svg/shopping-cart.svg");
 export default {}
 </script>
