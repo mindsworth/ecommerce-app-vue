@@ -1,5 +1,5 @@
 <template>
-  <div className="hero">
+  <header className="hero">
     <div className="container hero__header">
       <h1 className="text">We are Celestial,</h1>
       <p className="sub-text">
@@ -11,7 +11,7 @@
     </div>
 
     <HeroCarousel />
-  </div>
+  </header>
 </template>
 
 <script>

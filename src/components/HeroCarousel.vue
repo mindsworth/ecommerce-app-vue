@@ -1,27 +1,26 @@
 <template>
-  <div>
-    <Swiper
-      :slides-per-view="4"
-      :speed="15000"
-      :space-between="100"
-      :autoplay="{
-        delay: 1,
-        disableOnInteraction: false,
-        waitForTransition: false
-      }"
-      :loop="true"
-    >
-      <SwiperSlide v-for="(slide, index) in slides" :key="index">
-        <div
-          class="slide__img"
-          :data-ref="index + 1"
-          :style="{
-            backgroundImage: `url(${slide})`
-          }"
-        />
-      </SwiperSlide>
-    </Swiper>
-  </div>
+  <Swiper
+    :slides-per-view="4"
+    :speed="15000"
+    :space-between="100"
+    :centeredSlides="true"
+    :autoplay="{
+      delay: 1,
+      disableOnInteraction: false,
+      waitForTransition: false
+    }"
+    :loop="true"
+  >
+    <SwiperSlide v-for="(slide, index) in slides" :key="index">
+      <div
+        class="slide__img"
+        :data-ref="index + 1"
+        :style="{
+          backgroundImage: `url(${slide})`
+        }"
+      />
+    </SwiperSlide>
+  </Swiper>
 </template>
 
 <script>
@@ -45,6 +44,11 @@ export default {
 
 <style lang="scss">
 @import "../assets/styles/_variables.scss";
+
+.swiper-container {
+  z-index: -1;
+  position: relative;
+}
 
 .swiper-wrapper {
   display: flex;
