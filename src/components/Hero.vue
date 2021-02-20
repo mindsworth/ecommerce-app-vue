@@ -11,10 +11,6 @@
     </div>
 
     <HeroCarousel />
-
-    <!-- <div className="hero__slider">
-      <SlickSlider />
-    </div> -->
   </div>
 </template>
 
@@ -31,12 +27,14 @@ export default {
 .hero {
   text-align: center;
 
-  &__header .text {
-  }
+  &__header {
+    margin-top: 13vw;
+    margin-bottom: 5vw;
 
-  &__header .sub-text {
-    font-size: 1.6vw;
-    color: $color-text-primary;
+    .sub-text {
+      font-size: 1.6vw;
+      color: $color-text-primary;
+    }
   }
 
   &__cta {
