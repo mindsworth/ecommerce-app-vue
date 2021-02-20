@@ -45,7 +45,7 @@ export default {
 .nav-header {
   position: sticky;
   top: 0;
-  height: 6vw;
+  height: 7vw;
   display: flex;
   justify-content: space-between;
   align-items: center;

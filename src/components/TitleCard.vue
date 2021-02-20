@@ -1,17 +1,17 @@
 <template>
   <div class="title-card">
-    <p class="title">Who We Are</p>
-    <h2 class="subtitle"><span>True</span> furniture Masters</h2>
+    <p class="title">{{ data.title }}</p>
+    <h2 class="subtitle" v-html="data.subTitle" />
     <p class="caption">
-      We are a collaboration of emerging and iconic designers and makers. Each
-      object was designed to bring quality and style to your everyday rituals.
+      {{ data.caption }}
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Title-Card"
+  name: "Title-Card",
+  props: ["data"]
 };
 </script>
 <style lang="scss">

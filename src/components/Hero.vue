@@ -29,7 +29,7 @@ export default {
 
   &__header {
     margin-top: 13vw;
-    margin-bottom: 5vw;
+    margin-bottom: 8vw;
 
     .sub-text {
       font-size: 1.6vw;
