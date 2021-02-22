@@ -119,6 +119,7 @@ export default {
       margin: 0 auto;
     }
   }
+
   &__group {
     display: flex;
     flex-direction: column;

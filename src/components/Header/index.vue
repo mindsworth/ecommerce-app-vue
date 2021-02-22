@@ -1,9 +1,9 @@
 <template>
-  <nav class="nav-header">
+  <header class="nav-header">
     <router-link to="/">
       <Logo class="nav-header__logo" />
     </router-link>
-    <div class="nav-header__links">
+    <nav class="nav-header__links">
       <Links />
       <Cart />
       <HamburgerMenu
@@ -11,8 +11,8 @@
         @click="animateMenu"
       />
       <OverlayMenu :active="menuIsActive" />
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 
 <script>
