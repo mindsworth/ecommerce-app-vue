@@ -5,7 +5,7 @@ import { gsap } from "gsap"; //Improve this import!!
 function InitPreviewAnimation() {
   $(".category-list__item").each(function(index, el) {
     const thisId = el.id;
-    console.log("thisId", index);
+
     const $thisPreviewImages = $(".preview__left, .preview__right").find(
       `img[id="${thisId}"]`
     );

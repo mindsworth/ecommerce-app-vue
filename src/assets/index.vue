@@ -51,13 +51,20 @@ export const imgOtto = {
 };
 
 export const iconArrow = require("./img/arrow-down.png");
-export const logo = require("./img/celestial-logo2.png");
+export const logoBlack = require("./img/celestial-logo2.png");
+export const logoWhite = require("./svg/logo-white.svg");
 
 export const menuImages = {
   first: require("./img/menu-1.jpg"),
   second: require("./img/menu-2.jpg"),
   third: require("./img/menu-3.jpg"),
   fourth: require("./img/menu-4.jpg")
+};
+
+export const socialIcons = {
+  facebook: require("./svg/facebook.svg"),
+  instagram: require("./svg/instagram.svg"),
+  pinterest: require("./svg/pinterest.svg")
 };
 
 export const videoIsh = require("./img/video-ish.jpg");

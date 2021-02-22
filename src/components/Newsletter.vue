@@ -1,12 +1,10 @@
 <template>
-  <section className="newsletter__section">
+  <section class="newsletter__section">
     <div class="container">
-      <p className="title">newsletter</p>
-      <h2 className="subtitle">
-        <span>Subscribe</span> to get the latest updates
-      </h2>
+      <p class="title">newsletter</p>
+      <h2 class="subtitle"><span>Subscribe</span> to get the latest updates</h2>
 
-      <form action="" className="newsletter__form">
+      <form action="" class="newsletter__form">
         <FormInput placeholder="Email" type="email" />
         <button>Subscribe</button>
       </form>
@@ -15,7 +13,11 @@
 </template>
 
 <script>
-export default {};
+import FormInput from "./FormInput";
+
+export default {
+  components: { FormInput }
+};
 </script>
 
 <style lang="scss">

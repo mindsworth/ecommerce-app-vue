@@ -19,7 +19,7 @@
 import { ref } from "vue";
 import Cart from "./Cart";
 import HamburgerMenu from "./HamburgerMenu";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import OverlayMenu from "./OverlayMenu";
 import Links from "./Links";
 

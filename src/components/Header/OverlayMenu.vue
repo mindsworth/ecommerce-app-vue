@@ -25,7 +25,7 @@
 
 <script>
 import Links from "./Links";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import { menuImages } from "../../assets/index";
 import { onMounted, ref, watchEffect } from "vue";
 // import { useRoute } from "vue-router";
