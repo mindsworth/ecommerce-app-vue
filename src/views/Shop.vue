@@ -42,7 +42,7 @@ export default {
       );
 
       return !props.categoryName
-        ? "Everything"
+        ? "everything"
         : isFilterValid
         ? props.categoryName
         : null;
@@ -54,13 +54,44 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/styles/_variables.scss";
+
 .collection {
   display: flex;
-  border: 1px solid red;
   width: 100vw;
+  min-height: 100vh;
 
   .side-filter {
-    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    width: 18vw;
+
+    ul {
+      position: sticky;
+      top: 15vh;
+      width: 100%;
+
+      li {
+        padding: 0 5vw;
+      }
+
+      > li > a {
+        font-family: "Cormorant", serif;
+        font-size: 1.8vw;
+        line-height: 1.2;
+        color: $color-text-primary;
+
+        &:hover {
+          font-style: italic;
+        }
+
+        @include respond(phone) {
+          font-size: 11.4vw;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
   }
 }
 </style>
