@@ -2,7 +2,7 @@
   <div id="app-inner">
     <Header />
     <main>
-      <router-view />
+      <router-view :key="$route.fullPath" />
     </main>
     <Footer />
   </div>
@@ -29,7 +29,7 @@ export default {
   min-height: 100vh;
 
   main {
-    flex: 1 1;
+    flex: 1 1 0;
   }
 }
 </style>
