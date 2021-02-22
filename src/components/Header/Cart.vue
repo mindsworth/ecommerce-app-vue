@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { ShoppingIcon } from "../assets/index";
+import { ShoppingIcon } from "../../assets/index";
 
 export default {
   name: "Cart",
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/styles/_variables.scss";
+@import "../../assets/styles/_variables.scss";
 
 .cart {
   position: relative;

@@ -26,7 +26,7 @@
 <script>
 import Links from "./Links";
 import Logo from "./Logo";
-import { menuImages } from "../assets/index";
+import { menuImages } from "../../assets/index";
 import { onMounted, ref, watchEffect } from "vue";
 // import { useRoute } from "vue-router";
 import { gsap } from "gsap";
@@ -119,7 +119,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/styles/_variables.scss";
+@import "../../assets/styles/_variables.scss";
 
 .overlay-menu {
   position: fixed;

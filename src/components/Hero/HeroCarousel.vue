@@ -26,7 +26,7 @@
 <script>
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { carouselImages } from "../assets/index";
+import { carouselImages } from "../../assets/index";
 
 SwiperCore.use([Autoplay]);
 
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/styles/_variables.scss";
+@import "../../assets/styles/_variables.scss";
 
 .swiper-container {
   z-index: -1;

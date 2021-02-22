@@ -11,10 +11,10 @@
 
 <script>
 import TwoColumnSection from "../components/TwoColumnSection";
-import Hero from "../components/Hero";
+import Hero from "../components/Hero/index";
 import { imgAbout1, imgAbout2, imgEthos1, imgEthos2 } from "../assets/index";
 import VideoSection from "../components/VideoSection";
-import CategorySection from "../components/CategorySection";
+import CategorySection from "../components/CategorySection/index";
 
 export default {
   name: "Home",

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { logo } from "../assets/index";
+import { logo } from "../../assets/index";
 
 export default {
   name: "Logo",

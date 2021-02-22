@@ -3,7 +3,7 @@
     <div class="container">
       <div className="title">Browse Collections</div>
       <div class="preview">
-        <div class="preview__left">
+        <div class="preview__left" ref="imgPreview">
           <img
             alt=""
             :src="imgChair.second"
@@ -21,28 +21,24 @@
               transform: 'translateX(50%)',
               opacity: '0'
             }"
-            id="2"
           />
           <img
             alt=""
             :src="imgSofa.first"
             class="img__large"
             :style="{ left: '45%', bottom: '10%', opacity: '0' }"
-            id="3"
           />
           <img
             alt=""
             :src="imgSofa.second"
             class="img__large"
             :style="{ right: '45%', top: '-10%', opacity: '0' }"
-            id="3"
           />
           <img
             alt=""
             :src="imgChair.third"
             class="img__small"
             :style="{ bottom: '20%', left: '20%', opacity: '1' }"
-            id="1"
           />
           <img
             alt=""
@@ -54,21 +50,18 @@
               transform: 'translateX(50%)',
               opacity: '0'
             }"
-            id="4"
           />
           <img
             alt=""
             :src="imgOtto.third"
             class="img__small"
             :style="{ bottom: '20%', left: '20%', opacity: '0' }"
-            id="5"
           />
           <img
             alt=""
             :src="imgOtto.second"
             class="img__small"
             :style="{ left: '50%', top: '12%', opacity: '0' }"
-            id="5"
           />
         </div>
         <div class="category-list">
@@ -150,13 +143,12 @@ import {
   imgLight,
   imgStool,
   imgOtto
-} from "../assets/index";
+} from "../../assets/index";
 
 export default {
   name: "Category-Section",
   setup() {
     const collection = ["chairs", "lights", "sofas", "stools", "ottomans"];
-    const previewLeftUrl = ref();
     const previewRightUrl = ref();
 
     const handleHover = selectedId => {
@@ -166,7 +158,6 @@ export default {
     return {
       collection,
       handleHover,
-      previewLeftUrl,
       previewRightUrl,
       imgChair,
       imgSofa,
@@ -179,7 +170,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/styles/_variables.scss";
+@import "../../assets/styles/_variables.scss";
 
 .category-section {
   height: 100vh;
@@ -199,13 +190,11 @@ export default {
   .preview {
     display: grid;
     grid-template-columns: 2fr 1.5fr 2fr;
-    border: 1px solid red;
     width: 100%;
 
     align-items: center;
 
     .category-list {
-      border: 1px solid #000;
       &__item a {
         display: block;
         text-align: center;
@@ -229,7 +218,6 @@ export default {
 
     &__left,
     &__right {
-      border: 1px solid #000;
       position: relative;
       height: 100%;
       z-index: -1;
