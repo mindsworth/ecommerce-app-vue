@@ -29,19 +29,17 @@ export default {};
     padding: 12vw 8vw;
   }
 
-  .title {
-    &__sub {
-      width: 50vw;
-      margin: 2.4vw auto 0 auto;
-      line-height: 110%;
+  .subtitle {
+    width: 60vw;
+    margin: 2.4vw auto 0 auto;
+    line-height: 110%;
 
-      &::after {
-        all: unset;
-      }
+    &::after {
+      all: unset;
+    }
 
-      @include respond(phone) {
-        width: unset;
-      }
+    @include respond(phone) {
+      width: unset;
     }
   }
 
