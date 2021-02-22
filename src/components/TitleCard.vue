@@ -26,11 +26,6 @@ export default {
 
   .subtitle {
     color: $color-secondary;
-    line-height: 100%;
-    font-size: 5vw;
-    line-height: 90%;
-    margin-bottom: 1vw;
-    font-weight: 200;
     position: relative;
     z-index: -1;
 

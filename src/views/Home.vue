@@ -6,6 +6,7 @@
     <CategorySection />
     <VideoSection />
     <TwoColumnSection :label="'ethos'" :data="ethosSectionData" />
+    <Newsletter />
   </div>
 </template>
 
@@ -15,10 +16,17 @@ import Hero from "../components/Hero/index";
 import { imgAbout1, imgAbout2, imgEthos1, imgEthos2 } from "../assets/index";
 import VideoSection from "../components/VideoSection";
 import CategorySection from "../components/CategorySection/index";
+import Newsletter from "../components/Newsletter";
 
 export default {
   name: "Home",
-  components: { Hero, TwoColumnSection, VideoSection, CategorySection },
+  components: {
+    Hero,
+    TwoColumnSection,
+    VideoSection,
+    CategorySection,
+    Newsletter
+  },
   setup() {
     const aboutSectionData = {
       title: "Who We Are",
