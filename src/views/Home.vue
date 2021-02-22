@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TwoColumnSection from "../components/TwoColumnSection";
+import TwoColumnSection from "../components/TwoColumnSection/index";
 import Hero from "../components/Hero/index";
 import { imgAbout1, imgAbout2, imgEthos1, imgEthos2 } from "../assets/index";
 import VideoSection from "../components/VideoSection";

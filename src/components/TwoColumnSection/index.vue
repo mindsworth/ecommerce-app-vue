@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import TitleCard from "./TitleCard";
+import TitleCard from "../TitleCard";
 
 export default {
   name: "Two-Column-Section",
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/styles/_variables.scss";
+@import "../../assets/styles/_variables.scss";
 
 .two-col-section {
   & .inner {
