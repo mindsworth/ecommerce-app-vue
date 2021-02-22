@@ -145,6 +145,7 @@
           />
         </div>
       </div>
+      <router-link to="/" class="view-all-btn">View everything</router-link>
     </div>
   </div>
 </template>
@@ -250,6 +251,19 @@ export default {
         width: 35%;
         height: auto;
       }
+    }
+  }
+
+  .view-all-btn {
+    margin-top: 2.2vw;
+    text-align: center;
+    color: $color-secondary;
+    letter-spacing: 0.1em;
+    transition: letter-spacing 0.3s ease;
+    font-size: 0.7vw;
+
+    &:hover {
+      letter-spacing: 0.2em;
     }
   }
 }
