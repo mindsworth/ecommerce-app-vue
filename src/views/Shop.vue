@@ -64,7 +64,7 @@ export default {
   .side-filter {
     display: flex;
     align-items: center;
-    width: 18vw;
+    width: 20vw;
 
     ul {
       position: sticky;
@@ -90,6 +90,22 @@ export default {
           display: flex;
           justify-content: center;
         }
+      }
+    }
+  }
+
+  .showcase {
+    flex: 1;
+
+    &__header {
+      margin: 5vw 0 10vw;
+
+      .title {
+        margin-bottom: 3vw;
+      }
+
+      .subtitle {
+        text-transform: capitalize;
       }
     }
   }
