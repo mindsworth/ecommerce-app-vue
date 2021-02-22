@@ -57,6 +57,7 @@ a {
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 5vw;
 }
 
 .title {
@@ -72,8 +73,4 @@ a {
   font-size: 5vw;
   margin-bottom: 1vw;
   font-weight: 200;
-}
-
-.space {
-  padding: 3vw;
 }

@@ -1,7 +1,11 @@
 <template>
-  <Header />
-  <router-view />
-  <Footer />
+  <div id="app-inner">
+    <Header />
+    <main>
+      <router-view />
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -17,4 +21,15 @@ export default {
 <style lang="scss">
 @import "./assets/styles/_variables.scss";
 @import "./assets/styles/_global.scss";
+
+#app-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+  main {
+    flex: 1 1;
+  }
+}
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <Hero />
-    <div class="space" />
     <TwoColumnSection :label="'about'" :data="aboutSectionData" />
     <CategorySection />
     <VideoSection />
