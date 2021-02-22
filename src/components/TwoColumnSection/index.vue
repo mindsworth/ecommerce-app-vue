@@ -1,6 +1,12 @@
 <template>
-  <section class="two-col-section">
-    <div class="container inner" :class="{ ethos: label === 'ethos' }">
+  <section
+    class="two-col-section"
+    :class="{ about: label === 'about', ethos: label === 'ethos' }"
+  >
+    <div
+      class="container inner"
+      :class="{ [`${label}-inner`]: label === 'ethos' }"
+    >
       <div class="inner--content"><TitleCard :data="data" /></div>
 
       <div class="inner--images">
@@ -19,6 +25,8 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
+import ScrollTriggerAnimations from "./animation";
 import TitleCard from "../TitleCard";
 
 export default {
@@ -26,6 +34,7 @@ export default {
   components: { TitleCard },
   props: ["data", "label"],
   setup() {
+    onMounted(() => ScrollTriggerAnimations());
     return {};
   }
 };
@@ -41,6 +50,8 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
 
     &--images {
       position: relative;
@@ -52,17 +63,23 @@ export default {
         height: 40vw;
         width: fit-content;
 
-        &-overlay__img {
-          position: absolute;
-          left: 0;
-          bottom: 30%;
+        &-overlay {
           width: 16vw;
           height: 24vw;
+          position: absolute;
+          left: 0;
+          top: 10%;
+
+          &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
     }
 
-    &.ethos {
+    &.ethos-inner {
       .inner--content {
         order: 2;
 
@@ -75,10 +92,9 @@ export default {
         width: 100%;
         text-align: left;
 
-        & .banner-overlay__img {
+        .banner-overlay {
           left: unset;
           right: 0;
-          bottom: 30%;
         }
       }
     }
