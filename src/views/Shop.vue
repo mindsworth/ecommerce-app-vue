@@ -1,6 +1,6 @@
 <template>
   <div class="collection">
-    <div class="sideFilter">
+    <div class="side-filter">
       <ul>
         <li>
           <router-link :to="{ name: 'Collection' }">Everything</router-link>
@@ -55,7 +55,12 @@ export default {
 
 <style lang="scss">
 .collection {
-  flex: 1;
-  border: 1px solid #000;
+  display: flex;
+  border: 1px solid red;
+  width: 100vw;
+
+  .side-filter {
+    border: 1px solid #000;
+  }
 }
 </style>

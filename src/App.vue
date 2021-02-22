@@ -25,11 +25,12 @@ export default {
 #app-inner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   min-height: 100vh;
 
   main {
     flex: 1 1 0;
+    display: flex;
+    align-items: stretch;
   }
 }
 </style>
