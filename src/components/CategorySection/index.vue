@@ -8,7 +8,7 @@
             alt=""
             :src="imgChair.second"
             class="img__small"
-            :style="{ left: '50%', top: '12%', opacity: '1' }"
+            :style="{ left: '50%', top: '20%', opacity: '1' }"
             id="1"
           />
           <img
@@ -16,72 +16,80 @@
             :src="imgLight.third"
             class="img__large"
             :style="{
-              top: '5%',
+              top: '25%',
               right: '50%',
               transform: 'translateX(50%)',
               opacity: '0'
             }"
+            id="2"
           />
           <img
             alt=""
             :src="imgSofa.first"
             class="img__large"
-            :style="{ left: '45%', bottom: '10%', opacity: '0' }"
+            :style="{ left: '45%', bottom: '15%', opacity: '0' }"
+            id="3"
           />
           <img
             alt=""
             :src="imgSofa.second"
             class="img__large"
-            :style="{ right: '45%', top: '-10%', opacity: '0' }"
+            :style="{ right: '45%', top: '10%', opacity: '0' }"
+            id="3"
           />
           <img
             alt=""
             :src="imgChair.third"
             class="img__small"
             :style="{ bottom: '20%', left: '20%', opacity: '1' }"
+            id="1"
           />
           <img
             alt=""
             :src="imgStool.third"
             class="img__large"
             :style="{
-              top: '5%',
+              top: '25%',
               right: '50%',
               transform: 'translateX(50%)',
               opacity: '0'
             }"
+            id="4"
           />
           <img
             alt=""
             :src="imgOtto.third"
             class="img__small"
             :style="{ bottom: '20%', left: '20%', opacity: '0' }"
+            id="5"
           />
           <img
             alt=""
             :src="imgOtto.second"
             class="img__small"
-            :style="{ left: '50%', top: '12%', opacity: '0' }"
+            :style="{ left: '50%', top: '25%', opacity: '0' }"
+            id="5"
           />
         </div>
+
         <div class="category-list">
-          <div
+          <router-link
+            to="/"
             class="category-list__item"
             v-for="(item, index) in collection"
             :key="index"
-          >
-            <router-link to="/" @mouseover="handleHover(index + 1)">{{
-              item
-            }}</router-link>
-          </div>
+            :id="index + 1"
+            >{{ item }}
+          </router-link>
         </div>
+
         <div class="preview__right">
           <img
             alt=""
             :src="imgChair.first"
             class="img__large"
             :style="{
-              top: '5%',
+              top: '25%',
               right: '50%',
               transform: 'translateX(50%)',
               opacity: '1'
@@ -93,41 +101,47 @@
             :src="imgLight.first"
             class="img__small"
             :style="{ bottom: '20%', right: '20%', opacity: '0' }"
+            id="2"
           />
           <img
             alt=""
             :src="imgLight.second"
             class="img__small"
-            :style="{ right: '50%', top: '12%', opacity: '0' }"
+            :style="{ right: '47%', top: '22%', opacity: '0' }"
+            id="2"
           />
           <img
             alt=""
             :src="imgSofa.third"
             class="img__large"
-            :style="{ right: '35%', top: '10%', opacity: '0' }"
+            :style="{ right: '35%', top: '25%', opacity: '0' }"
+            id="3"
           />
           <img
             alt=""
             :src="imgStool.first"
             class="img__small"
             :style="{ bottom: '20%', right: '50%', opacity: '0' }"
+            id="4"
           />
           <img
             alt=""
             :src="imgStool.second"
             class="img__small"
-            :style="{ right: '20%', top: '12%', opacity: '0' }"
+            :style="{ right: '20%', top: '20%', opacity: '0' }"
+            id="4"
           />
           <img
             alt=""
             :src="imgOtto.first"
             class="img__large"
             :style="{
-              top: '5%',
+              top: '30%',
               right: '50%',
               transform: 'translateX(50%)',
               opacity: '0'
             }"
+            id="5"
           />
         </div>
       </div>
@@ -136,7 +150,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { onMounted } from "vue";
 import {
   imgChair,
   imgSofa,
@@ -144,21 +158,22 @@ import {
   imgStool,
   imgOtto
 } from "../../assets/index";
+import InitPreviewAnimation from "./animation.vue";
 
 export default {
   name: "Category-Section",
   setup() {
     const collection = ["chairs", "lights", "sofas", "stools", "ottomans"];
-    const previewRightUrl = ref();
 
-    const handleHover = selectedId => {
-      console.log("selectedId", selectedId);
-    };
+    // const handleHover = selectedId => {
+    //   console.log("selectedId", selectedId);
+    // };
+
+    onMounted(() => InitPreviewAnimation());
 
     return {
       collection,
-      handleHover,
-      previewRightUrl,
+      // handleHover,
       imgChair,
       imgSofa,
       imgLight,
@@ -195,7 +210,7 @@ export default {
     align-items: center;
 
     .category-list {
-      &__item a {
+      &__item {
         display: block;
         text-align: center;
         text-transform: capitalize;
