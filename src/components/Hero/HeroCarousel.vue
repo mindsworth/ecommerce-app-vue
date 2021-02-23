@@ -2,7 +2,7 @@
   <Swiper
     :slides-per-view="4"
     :speed="15000"
-    :space-between="100"
+    :space-between="0"
     :centeredSlides="true"
     :autoplay="{
       delay: 1,

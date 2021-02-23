@@ -21,6 +21,13 @@
           {{ filter }}
         </h3>
       </div>
+      <div class="showcase__body">
+        <ProductCard
+          v-for="item in filteredShopData"
+          :key="item.id"
+          :data="item"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -28,12 +35,17 @@
 <script>
 import { computed } from "vue";
 import SHOP_DATA from "../assets/shop.data";
+import ProductCard from "../components/ProductCard";
 
 export default {
   name: "Shop Collection",
   props: ["categoryName"],
+  components: { ProductCard },
   setup(props) {
     const shopData = SHOP_DATA;
+    const filteredShopData = computed(() => {
+      return SHOP_DATA[0].items;
+    });
     const filter = computed(() => {
       const isFilterValid = Boolean(
         shopData.find(
@@ -48,7 +60,7 @@ export default {
         : null;
     });
 
-    return { shopData, filter };
+    return { shopData, filter, filteredShopData };
   }
 };
 </script>
@@ -63,13 +75,16 @@ export default {
 
   .side-filter {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 20vw;
+    z-index: 1;
+    padding-bottom: 5vw;
 
     ul {
       position: sticky;
-      top: 15vh;
+      top: 20vh;
       width: 100%;
+      margin-top: 40vh;
 
       li {
         padding: 0 5vw;
@@ -80,6 +95,7 @@ export default {
         font-size: 1.8vw;
         line-height: 1.2;
         color: $color-text-primary;
+        z-index: 1;
 
         &:hover {
           font-style: italic;
