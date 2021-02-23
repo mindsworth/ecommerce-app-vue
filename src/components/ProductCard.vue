@@ -1,16 +1,16 @@
 <template>
-  <div className="product-card">
+  <div class="product-card">
     <div
-      className="product-card__img"
+      class="product-card__img"
       :style="{
         backgroundImage: `url(${data.imageUrl})`
       }"
     />
-    <p className="product-card__category">{{ data.category }}</p>
+    <p class="product-card__category">{{ data.category }}</p>
 
-    <div className="product-card__details">
-      <p className="product-card__name">{{ data.name }}</p>
-      <p className="product-card__price">{{ `$${data.price}` }}</p>
+    <div class="product-card__details">
+      <p class="product-card__name">{{ data.name }}</p>
+      <p class="product-card__price">{{ `$${data.price}` }}</p>
     </div>
   </div>
 </template>
@@ -18,10 +18,7 @@
 <script>
 export default {
   name: "Product-Card",
-  props: ["data"],
-  setup(props) {
-    console.log(" props.data", props.data);
-  }
+  props: ["data"]
 };
 </script>
 

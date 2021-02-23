@@ -33,8 +33,9 @@
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import SHOP_DATA from "../assets/shop.data";
+import { productCardAnimation } from "../assets/animation";
 import ProductCard from "../components/ProductCard";
 
 export default {
@@ -58,6 +59,8 @@ export default {
 
       return result;
     });
+
+    onMounted(() => productCardAnimation());
 
     const filter = computed(() => {
       const isFilterValid = Boolean(
@@ -91,17 +94,14 @@ export default {
     display: flex;
     align-items: flex-start;
     width: 15vw;
-    z-index: 1;
     padding-bottom: 5vw;
+    pointer-events: initial;
 
     ul {
       position: sticky;
       top: 20vh;
       width: 100%;
       margin-top: 40vh;
-
-      li {
-      }
 
       > li > a {
         font-family: "Cormorant", serif;
@@ -145,6 +145,16 @@ export default {
       grid-gap: 5vw;
       padding-bottom: 10vw;
     }
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+  }
+
+  .v-leave-from,
+  .v-enter-to {
+    opacity: 1;
   }
 }
 </style>

@@ -166,15 +166,10 @@ export default {
   setup() {
     const collection = ["chairs", "lights", "sofas", "stools", "ottomans"];
 
-    // const handleHover = selectedId => {
-    //   console.log("selectedId", selectedId);
-    // };
-
     onMounted(() => InitPreviewAnimation());
 
     return {
       collection,
-      // handleHover,
       imgChair,
       imgSofa,
       imgLight,

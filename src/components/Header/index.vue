@@ -52,6 +52,7 @@ export default {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   padding: 0 6%;
+  z-index: 1000;
 
   &__links {
     display: flex;

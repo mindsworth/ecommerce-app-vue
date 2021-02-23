@@ -130,6 +130,7 @@ export default {
   display: grid;
   grid-template-columns: 1.35fr 2fr;
   visibility: hidden;
+  z-index: 100;
 
   &__left {
     height: 0;
