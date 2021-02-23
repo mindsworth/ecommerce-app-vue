@@ -44,8 +44,21 @@ export default {
   setup(props) {
     const shopData = SHOP_DATA;
     const filteredShopData = computed(() => {
-      return SHOP_DATA[0].items;
+      let result;
+      if (props.categoryName) {
+        result = shopData.find(
+          ({ category }) => category.toLowerCase() === props.categoryName
+        ).items;
+      } else {
+        result = [];
+        for (let i in shopData) {
+          result = [...result, ...shopData[i].items];
+        }
+      }
+
+      return result;
     });
+
     const filter = computed(() => {
       const isFilterValid = Boolean(
         shopData.find(
