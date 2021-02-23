@@ -85,11 +85,12 @@ export default {
   display: flex;
   width: 100vw;
   min-height: 100vh;
+  padding: 0 6%;
 
   .side-filter {
     display: flex;
     align-items: flex-start;
-    width: 20vw;
+    width: 15vw;
     z-index: 1;
     padding-bottom: 5vw;
 
@@ -100,7 +101,6 @@ export default {
       margin-top: 40vh;
 
       li {
-        padding: 0 5vw;
       }
 
       > li > a {
@@ -127,7 +127,7 @@ export default {
     flex: 1;
 
     &__header {
-      margin: 5vw 0 10vw;
+      margin: 5vw 0 8vw;
 
       .title {
         margin-bottom: 3vw;
@@ -136,6 +136,14 @@ export default {
       .subtitle {
         text-transform: capitalize;
       }
+    }
+
+    &__body {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-gap: 5vw;
+      padding-bottom: 10vw;
     }
   }
 }
