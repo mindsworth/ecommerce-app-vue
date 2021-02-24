@@ -22,7 +22,7 @@
       <Button label="Continue with Google" />
     </form>
 
-    <p class="login__cta">
+    <p class="form__cta">
       Don't have an account?
       <router-link to="/signup">Sign up now.</router-link>
     </p>
@@ -53,9 +53,15 @@ export default {
 <style lang="scss">
 .form {
   padding: 0 10vw;
+  text-align: center;
 
   &__title {
     margin-bottom: 3vw;
+    text-align: left;
+  }
+
+  &__cta {
+    text-align: left;
   }
 }
 </style>
