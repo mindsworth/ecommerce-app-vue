@@ -1,7 +1,15 @@
 <template>
+  <Header />
   <router-view></router-view>
+  <Footer />
 </template>
 
 <script>
-export default {};
+import Footer from "../components/Footer";
+import Header from "../components/Header/index";
+
+export default {
+  name: "Landing-Component",
+  components: { Header, Footer }
+};
 </script>
