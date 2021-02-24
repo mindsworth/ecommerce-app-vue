@@ -74,7 +74,7 @@
 
         <div class="category-list">
           <router-link
-            :to="'/shop/item'"
+            :to="'/shop/' + item"
             class="category-list__item"
             v-for="(item, index) in collection"
             :key="index"
