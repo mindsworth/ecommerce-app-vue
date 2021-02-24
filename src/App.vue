@@ -3,8 +3,8 @@
     <router-view :key="$route.fullPath" v-slot="{ Component }">
       <transition
         mode="out-in"
-        enter-active-class="animate__animated animate__fadeIn"
-        leave-active-class="animate__animated animate__fadeOut"
+        enter-active-class="animate__animated animate__fadeIn animate__fast"
+        leave-active-class="animate__animated animate__fadeOut animate__fast"
         appear
       >
         <component :is="Component" />

@@ -1,5 +1,10 @@
 <template>
-  <input class="form-input" autocomplete="off" v-model="message" />
+  <input
+    class="form-input"
+    onfocus="this.removeAttribute('readonly');"
+    autocomplete="off"
+    v-model="message"
+  />
 </template>
 
 <script>
@@ -14,8 +19,19 @@ export default {
       set: value => emit("update:modelValue", value)
     });
 
+    const toggleReadonly = event => {
+      event.preventDefault();
+
+      if (event.target.getAttribute("readonly") == "readonly") {
+        event.target.setAttribute("readonly", "readonly");
+      } else {
+        event.target.removeAttribute("readonly");
+      }
+    };
+
     return {
-      message
+      message,
+      toggleReadonly
     };
   }
 };
