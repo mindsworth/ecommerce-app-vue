@@ -203,8 +203,6 @@ export default {
     grid-template-columns: 2fr 1.5fr 2fr;
     width: 100%;
 
-    align-items: center;
-
     .category-list {
       &__item {
         display: block;
@@ -230,7 +228,6 @@ export default {
     &__left,
     &__right {
       position: relative;
-      height: 100%;
       z-index: -1;
 
       & > * {
