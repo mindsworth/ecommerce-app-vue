@@ -16,15 +16,13 @@ export default {
 @import "../assets/styles/_variables.scss";
 
 .btn {
-  border: 1px solid #000;
   outline: none;
-  height: 2vw;
+  height: 2.8vw;
   width: 100%;
-
   border: 1px solid $color-black;
   background-color: transparent;
   color: $color-black;
-  margin-bottom: 1vw;
+  font-size: 1vw;
 
   @include respond(phone) {
     height: 8vw;

@@ -18,7 +18,7 @@
       />
 
       <Button label="Login" type="submit" />
-      Or
+      <span class="or-text">Or</span>
       <Button label="Continue with Google" />
     </form>
 
@@ -60,8 +60,17 @@ export default {
     text-align: left;
   }
 
+  form {
+    .or-text {
+      margin: 1vw 0;
+      display: inline-block;
+      font-size: 0.7vw;
+    }
+  }
+
   &__cta {
     text-align: left;
+    margin-top: 2vw;
   }
 }
 </style>
