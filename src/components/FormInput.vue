@@ -2,16 +2,23 @@
   <input
     type="type"
     placeholder="placeholder"
-    :onChange="handleChange"
     name="name"
-    className="form-input"
+    class="form-input"
+    autocomplete="off"
+    v-model="inputValue"
   />
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "Form-Input",
-  props: ["handleChange"]
+  props: ["handleChange", "value"],
+  setup(props) {
+    const inputValue = ref(props.value);
+
+    return { inputValue };
+  }
 };
 </script>
 

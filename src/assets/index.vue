@@ -68,6 +68,7 @@ export const socialIcons = {
 };
 
 export const videoIsh = require("./img/video-ish.jpg");
+export const loginBanner = require("./img/login-banner.jpg");
 export const playSVG = require("./svg/play-button.svg");
 export const ShoppingIcon = require("./svg/shopping-cart.svg");
 export default {}

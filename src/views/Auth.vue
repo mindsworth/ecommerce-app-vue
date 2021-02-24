@@ -1,17 +1,38 @@
 <template>
   <div class="auth-page">
     <div class="auth-page__form">
+      <div>
+        <router-link to="/">
+          <Logo class="nav-header__logo" />
+        </router-link>
+      </div>
       <LoginForm />
     </div>
-    <div class="auth-page__hero"></div>
+    <div
+      class="auth-page__hero"
+      :style="{
+        backgroundImage: `url(${bannerUrl})`,
+        backgroundSize: 'cover'
+      }"
+    ></div>
   </div>
 </template>
 
 <script>
 import LoginForm from "../components/LoginForm.vue";
+import { loginBanner } from "../assets/index";
+import Logo from "../components/Logo.vue";
 
 export default {
-  components: { LoginForm }
+  name: "Login",
+  components: { LoginForm, Logo },
+  setup() {
+    const bannerUrl = loginBanner;
+
+    return {
+      bannerUrl
+    };
+  }
 };
 </script>
 
@@ -21,8 +42,13 @@ export default {
   display: grid;
   grid-template-columns: 2fr 1.5fr;
 
+  &__form {
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+  }
+
   &__hero {
-    border: 1px solid #000;
   }
 }
 </style>
