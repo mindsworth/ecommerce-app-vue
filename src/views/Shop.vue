@@ -3,11 +3,16 @@
     <div class="side-filter">
       <ul>
         <li>
-          <router-link :to="{ name: 'Collection' }">Everything</router-link>
+          <router-link :to="{ name: 'Shop' }">Everything</router-link>
         </li>
 
         <li v-for="{ category } in shopData" :key="category.id">
-          <router-link :to="'/collection/' + category.toLowerCase()">
+          <router-link
+            :to="{
+              name: 'Shop',
+              params: { categoryName: category.toLowerCase() }
+            }"
+          >
             {{ category }}
           </router-link>
         </li>

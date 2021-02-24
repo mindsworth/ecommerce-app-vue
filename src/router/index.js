@@ -1,25 +1,47 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+// import Home from "../views/Home.vue";
+import LandingComponent from "../views/LandingComponent.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "Landing",
+    component: LandingComponent,
+    children: [
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        name: "Shop",
+        path: "shop",
+        component: () => import("../views/Shop.vue")
+      },
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        name: "Home",
+        path: "/",
+        alias: "/home",
+        component: () => import("../views/Home.vue")
+      },
+      {
+        // UserPosts will be rendered inside User's <router-view>
+        // when /user/:id/posts is matched
+        name: "Shop-Filter",
+        path: "signup/:categoryName",
+        component: () => import("../views/Shop.vue"),
+        props: true
+      }
+    ]
   },
   {
-    path: "/collection",
-    name: "Collection",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import("../views/Shop.vue")
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/Login.vue")
   },
   {
-    path: "/collection/:categoryName",
-    name: "Collection-Filter",
-    component: () => import("../views/Shop.vue"),
-    props: true
+    path: "/signup",
+    name: "Login",
+    component: () => import("../views/Login.vue")
   }
 ];
 

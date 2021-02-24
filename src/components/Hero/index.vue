@@ -5,7 +5,7 @@
       <p className="sub-text">
         we design and manufacture furniture fit for gods
       </p>
-      <router-link :to="{ name: 'Collection' }" class="hero__cta">
+      <router-link :to="{ name: 'Shop' }" class="hero__cta">
         Discover Our Collections
       </router-link>
     </div>
