@@ -11,23 +11,19 @@ const routes = [
       {
         // UserProfile will be rendered inside User's <router-view>
         // when /user/:id/profile is matched
-        name: "Shop",
-        path: "shop",
-        component: () => import("../views/Shop.vue")
-      },
-      {
-        // UserProfile will be rendered inside User's <router-view>
-        // when /user/:id/profile is matched
         name: "Home",
         path: "/",
         alias: "/home",
         component: () => import("../views/Home.vue")
       },
       {
-        // UserPosts will be rendered inside User's <router-view>
-        // when /user/:id/posts is matched
+        name: "Shop",
+        path: "shop",
+        component: () => import("../views/Shop.vue")
+      },
+      {
         name: "Shop-Filter",
-        path: "signup/:categoryName",
+        path: "shop/:categoryName",
         component: () => import("../views/Shop.vue"),
         props: true
       }

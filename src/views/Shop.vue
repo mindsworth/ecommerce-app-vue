@@ -7,12 +7,7 @@
         </li>
 
         <li v-for="{ category } in shopData" :key="category.id">
-          <router-link
-            :to="{
-              name: 'Shop',
-              params: { categoryName: category.toLowerCase() }
-            }"
-          >
+          <router-link :to="'/shop/' + category.toLowerCase()">
             {{ category }}
           </router-link>
         </li>

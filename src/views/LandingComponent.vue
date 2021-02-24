@@ -1,7 +1,11 @@
 <template>
-  <Header />
-  <router-view></router-view>
-  <Footer />
+  <div id="app-inner">
+    <main>
+      <Header />
+      <router-view></router-view>
+      <Footer />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -13,3 +17,21 @@ export default {
   components: { Header, Footer }
 };
 </script>
+
+<style lang="scss">
+@import "../assets/styles/_variables.scss";
+@import "../assets/styles/_global.scss";
+
+#app-inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+</style>
