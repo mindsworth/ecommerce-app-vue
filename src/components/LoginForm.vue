@@ -1,5 +1,5 @@
 <template>
-  <h1>SIGN UP PAGE</h1>
+  <h1>Login Form</h1>
 </template>
 
 <script>
