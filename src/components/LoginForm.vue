@@ -1,16 +1,22 @@
 <template>
-  <form class="group" onSubmit="{this.handleSubmit}">
+  <form class="group" @submit.prevent="handleOnSubmit">
     <h2>Good to see you again!</h2>
-    <FormInput type="email" placeholder="Email" name="email" required />
+    <FormInput
+      type="email"
+      placeholder="Email"
+      name="email"
+      required
+      v-model="email"
+    />
     <FormInput
       type="password"
       placeholder="Password"
       name="password"
-      :value="value"
       required
+      v-model="password"
     />
 
-    <Button label="Login" />
+    <Button label="Login" type="submit" />
     Or
     <Button label="Continue with Google" />
   </form>
@@ -29,11 +35,14 @@ export default {
   name: "Login-Form",
   components: { FormInput, Button },
   setup() {
-    const value = ref(null);
+    const password = ref("");
+    const email = ref("");
 
-    console.log("value", value.value);
+    const handleOnSubmit = () => {
+      console.log("value", password.value, email.value);
+    };
 
-    return { value };
+    return { password, email, handleOnSubmit };
   }
 };
 </script>

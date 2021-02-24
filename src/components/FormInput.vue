@@ -1,23 +1,22 @@
 <template>
-  <input
-    type="type"
-    placeholder="placeholder"
-    name="name"
-    class="form-input"
-    autocomplete="off"
-    v-model="inputValue"
-  />
+  <input class="form-input" autocomplete="off" v-model="message" />
 </template>
 
 <script>
-import { ref } from "vue";
+import { computed } from "vue";
 export default {
   name: "Form-Input",
-  props: ["handleChange", "value"],
-  setup(props) {
-    const inputValue = ref(props.value);
+  props: ["modelValue"],
+  emits: ["update:modelValue"],
+  setup(props, { emit }) {
+    const message = computed({
+      get: () => props.modelValue,
+      set: value => emit("update:modelValue", value)
+    });
 
-    return { inputValue };
+    return {
+      message
+    };
   }
 };
 </script>
