@@ -19,19 +19,8 @@ export default {
       set: value => emit("update:modelValue", value)
     });
 
-    const toggleReadonly = event => {
-      event.preventDefault();
-
-      if (event.target.getAttribute("readonly") == "readonly") {
-        event.target.setAttribute("readonly", "readonly");
-      } else {
-        event.target.removeAttribute("readonly");
-      }
-    };
-
     return {
-      message,
-      toggleReadonly
+      message
     };
   }
 };
