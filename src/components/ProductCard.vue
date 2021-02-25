@@ -1,5 +1,8 @@
 <template>
   <div class="product-card">
+    <div class="cart__icon">
+      <img :src="cartUrl" alt="Cart Icon" />
+    </div>
     <div
       class="product-card__img"
       :style="{
@@ -16,9 +19,18 @@
 </template>
 
 <script>
+import { ShoppingIcon } from "../assets/index";
+
 export default {
   name: "Product-Card",
-  props: ["data"]
+  props: ["data"],
+  setup() {
+    const cartUrl = ShoppingIcon;
+
+    return {
+      cartUrl
+    };
+  }
 };
 </script>
 
@@ -28,7 +40,10 @@ export default {
 .product-card {
   width: 100%;
   height: 20vw;
-  cursor: pointer;
+
+  &:hover .cart__icon {
+    visibility: visible;
+  }
 
   @include respond(phone) {
     height: 70vw;
@@ -77,6 +92,21 @@ export default {
 
   &__name {
     font-family: "Cormorant", serif;
+  }
+
+  .cart__icon {
+    background-color: $color-white;
+    position: absolute;
+    right: -1vw;
+    bottom: 7vw;
+    z-index: 9;
+    cursor: pointer;
+    visibility: hidden;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
   }
 }
 </style>
