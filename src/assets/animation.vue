@@ -48,7 +48,7 @@ export function productCardAnimation() {
             width: 75,
             height: 75
           },
-          1000
+          500
         );
 
       imgclone.animate(
