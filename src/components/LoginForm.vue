@@ -19,7 +19,7 @@
 
       <Button label="Login" type="submit" class="submit-btn" />
       <span class="or-text">Or</span>
-      <Button label="Continue with Google" />
+      <Button label="Continue with Google" :icon="googleIcon" />
     </form>
 
     <p class="form__cta">
@@ -33,6 +33,7 @@
 import { ref } from "vue";
 import Button from "./Button.vue";
 import FormInput from "./FormInput.vue";
+import { socialIcons } from "../assets/index";
 
 export default {
   name: "Login-Form",
@@ -40,12 +41,13 @@ export default {
   setup() {
     const password = ref("");
     const email = ref("");
+    const googleIcon = socialIcons.google;
 
     const handleOnSubmit = () => {
       console.log("value", password.value, email.value);
     };
 
-    return { password, email, handleOnSubmit };
+    return { password, email, handleOnSubmit, googleIcon };
   }
 };
 </script>

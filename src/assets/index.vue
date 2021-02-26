@@ -64,7 +64,8 @@ export const menuImages = {
 export const socialIcons = {
   facebook: require("./svg/facebook.svg"),
   instagram: require("./svg/instagram.svg"),
-  pinterest: require("./svg/pinterest.svg")
+  pinterest: require("./svg/pinterest.svg"),
+  google: require("./svg/google.svg")
 };
 
 export const videoIsh = require("./img/video-ish.jpg");
