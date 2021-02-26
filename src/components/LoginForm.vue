@@ -17,7 +17,7 @@
         v-model="password"
       />
 
-      <Button label="Login" type="submit" />
+      <Button label="Login" type="submit" class="submit-btn" />
       <span class="or-text">Or</span>
       <Button label="Continue with Google" />
     </form>
@@ -51,6 +51,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/styles/_variables.scss";
+
 .form {
   padding: 0 10vw;
   text-align: center;
@@ -65,6 +67,13 @@ export default {
       margin: 1vw 0;
       display: inline-block;
       font-size: 0.7vw;
+    }
+
+    .submit-btn {
+      &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
     }
   }
 
